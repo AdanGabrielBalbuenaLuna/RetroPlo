@@ -20,5 +20,7 @@ class RandomRepo() {
         val personEndpoint:EndPoint = instanciaRetrofit.create()
         val response: Response<RandomClass> = personEndpoint.getPerson().execute()
         return response
+        //Ahora quiero hacer un merge a dev
+        //Ahora si haz el commit bro
     }
 }
