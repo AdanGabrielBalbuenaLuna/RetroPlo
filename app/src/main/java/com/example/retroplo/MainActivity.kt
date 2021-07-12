@@ -10,12 +10,14 @@ import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var textView: TextView;
+    lateinit var  textViewCountry: TextView;
+    lateinit var textCity: TextView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView = findViewById(R.id.textView)
+        textViewCountry = findViewById(R.id.tvCountry)
+        textCity = findViewById(R.id.tvCity)
     }
 
 
@@ -24,7 +26,8 @@ class MainActivity : AppCompatActivity() {
         doAsync {
             var response = interceptor.getPersonRandomRepo()
             uiThread {
-                textView.text = response.body()?.results?.get(0)?.email
+                textViewCountry.text = response.body()?.results?.get(0)?.location?.country
+                textCity.text = response.body()?.results?.get(0)?.location?.city
             }
         }
     }

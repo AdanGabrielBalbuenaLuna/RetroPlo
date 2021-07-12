@@ -57,5 +57,6 @@ dependencies {
     }
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
+    //dependencia Anko
     implementation 'org.jetbrains.anko:anko-common:0.10.8'
 }
